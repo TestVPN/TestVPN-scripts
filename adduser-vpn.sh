@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /var/www/TestVPN-scripts
-source lib-vpn.sh
+source lib/lib-vpn.sh
 
 if [[ "$#" -lt "1" ]]
 then
