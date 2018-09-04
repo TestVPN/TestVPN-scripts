@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /var/www/TestVPN
+cd /var/www/TestVPN-scripts
 source lib-vpn.sh
 
 if [[ "$#" -lt "1" ]]

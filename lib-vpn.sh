@@ -5,7 +5,7 @@
 # Modified by ChillerDragon:
 # https://github.com/TestVPN/TestVPN-scripts
 
-cert_path="/var/www/TestVPN/certs"
+cert_path="/var/www/TestVPN-scripts/certs"
 
 newclient () {
 	# Generates the custom client.ovpn
