@@ -1,7 +1,7 @@
 #!/bin/bash
 cd lib
 pos=0
-rows=1
+rows=2
 
 function PrintMenu() {
 	clear
@@ -14,10 +14,17 @@ function PrintMenu() {
 	then
 		echo "[x] web (+configs)"
 		echo "[ ] config"
+		echo "[ ] config (all)"
 	elif [[ "$pos" == "1" ]]
 	then
 		echo "[ ] web (+configs)"
 		echo "[x] config"
+		echo "[ ] config (all)"
+	elif [[ "$pos" == "2" ]]
+	then
+		echo "[ ] web (+configs)"
+		echo "[ ] config"
+		echo "[x] config (all)"
 	else
 		echo "error $pos out of scope"
 	fi
@@ -45,12 +52,15 @@ do
 		if [[ "$pos" == "0" ]]
 		then
 			./deluser-web.sh $1
-			exit
-		else
+		elif [[ "$pos" == "1" ]]
+		then
 			./deluser-vpn.sh $1
-			exit
+		elif [[ "$pos" == "2" ]]
+		then
+			./deluser-all-vpn.sh
+		else
+			echo "error out of range"
 		fi
-		echo "e pressed"
 		exit
 	elif [[ "$inp" == "q" ]]
 	then
