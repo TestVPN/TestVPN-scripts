@@ -25,3 +25,13 @@ www-data        ALL=NOPASSWD: /var/www/TestVPN-scripts/adduser-vpn.sh
 
 To setup the website that uses these scripts follow the README in this repo:
 https://github.com/TestVPN/TestVPN-web
+
+# Tests and troubleshooting
+
+Make sure you have a TUN device.
+
+```
+cd /var/www&TestVPN-scripts
+./test.sh
+```
+
