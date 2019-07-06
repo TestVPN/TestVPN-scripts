@@ -7,6 +7,8 @@ Place this repository at ``/var/www/``
 
 ```
 cd /var/www/
+git clone https://github.com/TestVPN/TestVPN-scripts
+cd html
 git clone https://github.com/TestVPN/TestVPN-web
 apt install openvpn
 ```
