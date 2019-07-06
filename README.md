@@ -31,7 +31,7 @@ https://github.com/TestVPN/TestVPN-web
 Make sure you have a TUN device.
 
 ```
-cd /var/www&TestVPN-scripts
+cd /var/www/TestVPN-scripts
 ./test.sh
 ```
 
