@@ -2,16 +2,32 @@
 cd /var/www/TestVPN-scripts
 source lib/lib-vpn.sh
 
+function log() {
+  echo "[ChillerVPN] $1"
+}
+
 if [[ "$#" -lt "1" ]]
 then
     echo "Usage: $0 <username>"
-    exit
+    exit 1
 fi
 
-echo "[ChillerVPN] adding new user: $1";
+if [ ! -d /etc/openvpn/easy-rsa/ ]
+then
+  log "Error: couldn't find directory /etc/openvpn/easy-rsa/"
+  exit 1
+fi
+
+if [ ! -f /etc/openvpn/easy-rsa/easyrsa ]
+then
+  log "Error: couldn't find binary /etc/openvpn/easy-rsa/easyrsa"
+  exit 1
+fi
+
+log "adding new user: $1";
 
 cd /etc/openvpn/easy-rsa/
 ./easyrsa build-client-full $1 nopass
 newclient $1
 echo ""
-echo "[ChillerVPN] Client $1 added, configuration is available at: $cert_path/$1.ovpn"
+log "Client $1 added, configuration is available at: $cert_path/$1.ovpn"
