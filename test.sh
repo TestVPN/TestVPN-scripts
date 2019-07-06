@@ -30,14 +30,4 @@ if [[ ! -e /dev/net/tun ]]; then
   exit
 fi
 
-if [ ! -d /etc/openvpn/easy-rsa/ ]
-then
-  err "couldn't find directory /etc/openvpn/easy-rsa/"
-fi
-
-if [ ! -f /etc/openvpn/easy-rsa/easyrsa ]
-then
-  err "couldn't find binary /etc/openvpn/easy-rsa/easyrsa"
-fi
-
 suc "all tests passed."

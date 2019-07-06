@@ -4,11 +4,11 @@ source lib/lib-vpn.sh
 
 if [[ "$#" -lt "1" ]]
 then
-    tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2
+    tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2
     echo "Usage: $0 <username>"
     exit
 fi
-aUsers=(`tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2`)
+aUsers=(`tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2`)
 IsArray="0"
 for user in "${aUsers[@]}"
 do

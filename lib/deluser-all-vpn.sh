@@ -2,7 +2,7 @@
 cd /var/www/TestVPN-scripts
 source lib/lib-vpn.sh
 
-aUsers=(`tail -n +2 /etc/openvpn/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2`)
+aUsers=(`tail -n +2 /etc/openvpn/server/easy-rsa/pki/index.txt | grep "^V" | cut -d '=' -f 2`)
 IsArray="0"
 for user in "${aUsers[@]}"
 do

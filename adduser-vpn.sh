@@ -12,21 +12,21 @@ then
     exit 1
 fi
 
-if [ ! -d /etc/openvpn/easy-rsa/ ]
+if [ ! -d /etc/openvpn/server/easy-rsa/ ]
 then
-  log "Error: couldn't find directory /etc/openvpn/easy-rsa/"
+  log "Error: couldn't find directory /etc/openvpn/server/easy-rsa/"
   exit 1
 fi
 
-if [ ! -f /etc/openvpn/easy-rsa/easyrsa ]
+if [ ! -f /etc/openvpn/server/easy-rsa/easyrsa ]
 then
-  log "Error: couldn't find binary /etc/openvpn/easy-rsa/easyrsa"
+  log "Error: couldn't find binary /etc/openvpn/server/easy-rsa/easyrsa"
   exit 1
 fi
 
 log "adding new user: $1";
 
-cd /etc/openvpn/easy-rsa/
+cd /etc/openvpn/server/easy-rsa/
 ./easyrsa build-client-full $1 nopass
 newclient $1
 echo ""
