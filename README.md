@@ -3,9 +3,13 @@ A repo holding all scripts that run TestVPN
 
 # Setup
 
-Place this repository at /var/www/
-And then clone the https://github.com/TestVPN/TestVPN-web to /var/www/html
+Place this repository at ``/var/www/``
 
+```
+cd /var/www/
+git clone https://github.com/TestVPN/TestVPN-web
+apt install openvpn
+```
 
 Then set the root path of apache to /var/www/html/TestVPN-web
 
