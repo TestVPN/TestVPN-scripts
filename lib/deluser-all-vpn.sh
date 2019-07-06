@@ -9,7 +9,7 @@ do
 	echo $user;
 done
 
-echo "do you really want to delete all these users? [y/n]"
+echo "do you really want to delete all these users? [Y/n]"
 read -n 1 -p "" inp
 echo ""
 if [ "$inp" == "n" ]; then

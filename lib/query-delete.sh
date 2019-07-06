@@ -16,7 +16,7 @@ do
 	echo $user
 done
 echo "---------------------"
-echo "do you really want to delete these users? [y/n]"
+echo "do you really want to delete these users? [Y/n]"
 read -n 1 -p "" inp
 echo ""
 if [ "$inp" == "n" ]; then

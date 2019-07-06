@@ -16,7 +16,7 @@ done
 if [[ "$IsArray" == "0" ]]
 then
 	echo -e "[ \e[1;31m WARNING \e[0m ] '$1' doesn't exist in database!"
-	echo "Do you want to delete vpn profile anyways? [y/n]"
+	echo "Do you want to delete vpn profile anyways? [Y/n]"
 	read -n 1 -p "" inp
 	if [ "$inp" == "n" ]; then
 	    printf "\n[TestVPN] stopped.\n"
