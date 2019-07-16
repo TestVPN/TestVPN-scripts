@@ -3,6 +3,11 @@ A repo holding all scripts that run TestVPN
 
 # Scripts Setup
 
+debian/ubuntu dependencys:
+```
+sudo apt install git php apache2 php-sqlite3
+```
+
 Place this repository at ``/var/www/``
 
 ```
