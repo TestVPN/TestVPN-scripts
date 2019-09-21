@@ -9,7 +9,6 @@ Yellow='\033[0;33m'
 
 function err() {
   echo -e "[${Red}error${Reset}] $1"
-  exit 1
 }
 
 function log() {
@@ -22,12 +21,23 @@ function suc() {
 
 if [[ "$EUID" -ne 0 ]]; then
   err "script has to be run as root."
-  exit
+  exit 1
 fi
 
 if [[ ! -e /dev/net/tun ]]; then
   err "no TUN device found."
-  exit
+  exit 1
+fi
+
+if [ ! -d /etc/openvpn ]; then
+    err "'/etc/openvpn' not found. Is openvpn installed?"
+    exit 1
+fi
+
+if [ ! -d /etc/openvpn/server/easy-rsa ]; then
+    err "'/etc/openvpn/server/easy-rsa' not found. Make sure to run install script:"
+    err "wget https://git.io/vpn -O /tmp/openvpn-install.sh && bash /tmp/openvpn-install.sh"
+    exit 1
 fi
 
 suc "all tests passed."
