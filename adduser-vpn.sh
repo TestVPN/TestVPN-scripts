@@ -3,7 +3,7 @@ cd /var/www/TestVPN-scripts
 source lib/lib-vpn.sh
 
 function log() {
-  echo "[ChillerVPN] $1"
+  echo "[TestVPN] $1"
 }
 
 if [[ "$#" -lt "1" ]]
