@@ -5,7 +5,7 @@ A repo holding all scripts that run TestVPN
 
 debian/ubuntu dependencys:
 ```
-sudo apt install git php apache2 php-sqlite3
+sudo apt install git php apache2 php-sqlite3 openvpn
 ```
 
 Place this repository at ``/var/www/``
@@ -13,9 +13,9 @@ Place this repository at ``/var/www/``
 ```
 cd /var/www/
 git clone https://github.com/TestVPN/TestVPN-scripts
+chown -R www-data:www-data TestVPN-scripts # give apache2 permission to access certs and database
 cd html
 git clone https://github.com/TestVPN/TestVPN-web
-apt install openvpn
 ```
 
 Then set the root path of apache to /var/www/html/TestVPN-web
