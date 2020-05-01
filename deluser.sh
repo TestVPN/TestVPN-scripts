@@ -3,6 +3,12 @@ cd lib
 pos=0
 rows=2
 
+if [ "$1" == "" ] || [ "$1" == "--help" ] || [ "$1" == "-h" ]
+then
+	echo "Usage: $(basename "$0") <username>"
+	exit 1
+fi
+
 function PrintMenu() {
 	clear
 	echo "==========================="
