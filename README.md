@@ -14,6 +14,7 @@ Place this repository at ``/var/www/``
 cd /var/www/
 git clone https://github.com/TestVPN/TestVPN-scripts
 chown -R www-data:www-data TestVPN-scripts # give apache2 permission to access certs and database
+chmod 770 TestVPN-scripts/ # give apache2 full read/write access but nobody else
 cd html
 git clone https://github.com/TestVPN/TestVPN-web
 ```
